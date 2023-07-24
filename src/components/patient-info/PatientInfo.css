@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    gap: 100px;
+}
+.user-image{
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+}
+.patient_info{
+    border-left: 2px solid red;
+    padding-left: 100px;
+}
