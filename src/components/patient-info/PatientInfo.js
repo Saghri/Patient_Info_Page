@@ -9,9 +9,17 @@ import defaultUser from "./defaultUser.jpg"
 export default function PatientInfo() {
   const [value, setValue] = useState();
   const [val, setVal] = useState();
+  const [enrolledTime, setEnrolledTime] = useState("09:00 AM");
+  const [OPD, setOPD] = useState("B112");
+  const [doctor, setDoctor] = useState("Dr. Adam J.");
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  // setEnrolledTime("");
+
 
   return (
-    <div className="container">
+    <div className="container py-6">
 
       {/* Patient Enrollment Details */}
       <div className="enrolled_details">
@@ -23,15 +31,15 @@ export default function PatientInfo() {
         <div className="enrollment">
           <label htmlFor="time">Time Enrolled: </label>
           <br />
-          <input type="text" name="time_enrolled" id="time" />
+          <input type="text" name="time_enrolled" id="time" value={enrolledTime} />
           <br />
           <label htmlFor="room">OPD Room: </label>
           <br />
-          <input type="text" name="opd_room" id="room" />
+          <input type="text" name="opd_room" id="room" value={OPD} />
           <br />
           <label htmlFor="doctor">Discounted By: </label>
           <br />
-          <input type="text" name="discounted_by" id="doctor" />
+          <input type="text" name="discounted_by" id="doctor" value={doctor} />
         </div>
       </div>
 
@@ -41,7 +49,7 @@ export default function PatientInfo() {
           <h3>Patient Info</h3>
           <div className="row">
             <label htmlFor="FullName">Full Name: </label>
-            <input type="text" name="Full_name" id="FullName" />
+            <input type="text" name="Full_name" id="FullName" placeholder="Muhammad Hassan Waheed" />
           </div>
 
           <div className="row">
@@ -49,7 +57,7 @@ export default function PatientInfo() {
               className="phone"
               international
               defaultCountry="PK"
-              placeholder="Enter phone number"
+              placeholder="345 7442650"
               displayInitialValueAsLocalNumber
               value={value}
               onChange={setValue}
@@ -66,17 +74,22 @@ export default function PatientInfo() {
                 setVal((v) => (e.target.validity.valid ? e.target.value : v))
               }
               id="CNIC"
+              placeholder="31101-5694352-2"
             />
           </div>
           <div className="row">
             <label htmlFor="dob">DOB:</label>
-            <input type="date" name="DOB" id="dob" />
+            <input type="date" name="DOB" id="dob"/>
           </div>
 
           <div className="row">
             <label htmlFor="email">Email: </label>
-            <input type="text" name="Email" id="email" />
-            <input type="text" name="domain" id="domain" />
+            <input type="text" name="Email" id="email" placeholder="hassanwaheed_12" />
+            <select name="domains" id="domain">
+              <option value="Gmail" selected>gmail.com</option>
+              <option value="Yahoo">yahoo.com</option>
+              <option value="Yahoo">hotmail.com</option>
+            </select>
           </div>
         </div>
 
@@ -105,19 +118,35 @@ export default function PatientInfo() {
             <a href="/">Request from patient device</a>
           </div>
             <div className="addHistory">
-              <button>&#43; Add to Medical History</button>
+              <button onClick={()=>setIsOpen(true)} >&#43; Add to Medical History</button>
             </div>
         </div>
 
         {/* Navigation Buttons */}
         <div className="buttons">
           <button className="back">Back Home</button>
-          <button className="done">Done</button>
+          <button className="done is-success">Done</button>
         </div>
       </div>
 
       {/* Patient Medical History */}
-      <div className="medical_history"></div>
+      <div className="medical_history">
+
+      </div>
+     
+      {isOpen && (
+       <div style={{ backgroundColor: 'white', width: '500px' }} className="has-text-centered">
+        
+        <div>
+        <textarea name="medical_history" id="history" cols="70" rows="20" placeholder="Enter Mediacl History of Patient" className="p-2"></textarea>
+        </div>
+        <button onClick={() => setIsOpen(false)}>
+          Save Medical History
+        </button>
+       </div>
+      )}
+
     </div>
+    
   );
 }
