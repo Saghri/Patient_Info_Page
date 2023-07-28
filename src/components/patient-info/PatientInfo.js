@@ -6,7 +6,7 @@ import "./PatientInfo.css";
 import "./style.scss";
 import defaultUser from "./defaultUser.jpg";
 
-// import NavigationBar from "../navbar/NavigationBar";
+import NavigationBar from "../navbar/NavigationBar";
 
 export default function PatientInfo() {
   const [value, setValue] = useState();
@@ -38,8 +38,8 @@ export default function PatientInfo() {
 
   return (
     <>
-    {/* <NavigationBar/> */}
-    <div className="container py-6">
+    <NavigationBar/>
+    <div className="container">
       {/* Patient Enrollment Details */}
       <div className="enrolled_details">
         <div className="enrolled_person has-text-centered">
