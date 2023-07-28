@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "react-phone-number-input/style.css";
 // import Input from 'react-phone-number-input/input'
-import PhoneInput from "react-phone-number-input";
+// import PhoneInput from "react-phone-number-input";
 import "./PatientInfo.css";
 import "./style.scss";
 import defaultUser from "./defaultUser.jpg";
 
-import NavigationBar from "../navbar/NavigationBar";
+// import NavigationBar from "../navbar/NavigationBar";
 
 export default function PatientInfo() {
   const [value, setValue] = useState();
@@ -30,6 +30,11 @@ export default function PatientInfo() {
     console.log(medicalHistory);
   };
 
+  const HideHistory = () => {
+    document.getElementById('medical').classList.remove('display');
+    console.log(medicalHistory);
+  };
+
 
   return (
     <>
@@ -41,7 +46,7 @@ export default function PatientInfo() {
           <img src={defaultUser} alt="patient_image" className="user-image" />
           <p id="name">M.Hassan</p>
           <p id="category">
-            Patient <span>&#9998;</span>
+            Patient {/* <span>&#9998;</span> */}
           </p>
         </div>
         <br />
@@ -125,6 +130,7 @@ export default function PatientInfo() {
 
         {/* Patient Vitals */}
         <div className="vitals">
+          <div className="vital_row">
           <div className="vital_col">
             <div>
               <label htmlFor="temp">Temperature: </label>
@@ -135,54 +141,62 @@ export default function PatientInfo() {
             <input type="radio" name="temperature" id="Faren" />
             <label htmlFor="Faren">F</label>
           </div>
-          <div className="vital_col">
+          <div className="vital_col BP_col">
             <label htmlFor="BP">Blood Pressure: </label>
             <input type="text" id="BP" placeholder="00.00" />
           </div>
+          </div>
 
-          <div className="vital_col">
+          <div className="vital_row">
+          <div className="vital_col PR_col">
             <label htmlFor="PR">Pulse Rate: </label>
             <input type="text" id="PR" placeholder="00.00" />
           </div>
-          <div className="vital_col">
-            <a href="/">Request from patient device</a>
+          <div className="vital_col request_col">
+            <a href="/" onClick={()=>{
+              alert("Device not connected!")
+            }}>Request from patient device</a>
+          </div>
           </div>
           <div className="addHistory">
-            <button onClick={() => setIsOpen(true)}>
+            <button onClick={() => {
+              setIsOpen(true)
+              HideHistory();  
+              }}>
               &#43; Add to Medical History
             </button>
           </div>
         </div>
 
         {/* Navigation Buttons */}
-        <div className="buttons">
+        <div className="nav_buttons">
           <button className="back">Back Home</button>
-          <button className="done is-success">Done</button>
+          <button className="done">Done</button>
         </div>
       </div>
 
       {/* Patient Medical History */}
-      <div>
+      <div className="history_div"  id="medical">
+        <h3>Medical History</h3>
         <textarea
           name=""
-          className="medical_history" id="medical"
-          cols="30"
-          rows="10"
+          className="medical_history"
+          cols="35"
+          rows="25"
           value={medicalHistory}
         ></textarea>
       </div>
 
       {/* Medical History Popup */}
       {isOpen && (
-        <div style={{ backgroundColor: "white" }} className="has-text-centered">
+        <div className="history_popUP">
           <div>
             <textarea
               name="patient_history"
               id="history"
-              cols="70"
+              cols="50"
               rows="20"
-              placeholder="Enter Mediacl History of Patient"
-              className="p-2"
+              placeholder="Enter Medical History of Patient"
             ></textarea>
           </div>
           <button

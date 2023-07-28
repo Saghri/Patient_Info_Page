@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    gap: 100px;
+    gap: 80px;
     height: 100vh;
 }
 
@@ -37,9 +37,9 @@
 
 /* Patient Info Styles */
 .patient_info{
-    border-left: 2px solid black;
+    border-left: 1px solid black;
     padding: 76px 0;
-    padding-left: 100px;
+    padding-left: 80px;
 }
 .patient_details h3{
     font-size: 30px;
@@ -61,6 +61,7 @@
     color: grey;
     border: 1px solid grey;
     background-color: transparent;
+    letter-spacing: 1px;
 }
 #FullName{
     margin-left: 47px;
@@ -83,6 +84,7 @@
     color: grey;
     border: 1px solid grey;
     background-color: #dedddd;
+    letter-spacing: 1px;
 }
 
 /* Patient Vitals */
@@ -97,14 +99,128 @@
 .vitals label{
     font-weight: 450;
 }
+.vital_row{
+    display: flex;
+}
+.vital_row input{
+    width: 82px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 26px;
+    margin-left: 10px;
+    font-size: 16px;
+    color: grey;
+    border: 1px solid grey;
+    /* background-color: transparent; */
+}
+#Celcious{
+    margin-left: 131px;
+}
+#Celcious, #Faren{
+    width: 20px;
+}
+.BP_col{
+    margin-left: 30px;
+}
+.PR_col input{
+    margin-left: 30px;
+}
+.request_col{
+    margin-left: 30px;
+    font-size: 16px;
+}
+.request_col a{
+    color: grey;
+    text-decoration: underline;
+}
 
+.addHistory{
+    margin-top: 10px;
+}
+.addHistory button{
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
+    color: white;
+    background-color: #5252ee;
+    border: none;
+}
+.addHistory button:hover{
+    cursor: pointer;
+    background-color: #6262f2;
+}
+
+/* Navigation Buttons */
+.nav_buttons{
+    margin-top: 20px;
+    margin-left: 293px;    
+}
+.nav_buttons button{
+    width: 120px;
+    border-radius: 26px;
+    font-size: 18px;
+    padding: 7px;
+    letter-spacing: 1px;
+}
+.back{
+    margin-right: 10px;
+    color: gray;
+    border: 3px solid gray;
+}
+.done{
+    background-color: #5252ee;
+    color: white;
+    border: 3px solid #5252ee;
+}
+.done:hover{
+    background-color: #6262f2;
+    cursor: pointer;
+}
 
 /* Medical History Styles*/
-.medical_history{
+.history_div{
     display: none;
+    padding: 85px 0;
+    border-left: 1px solid black;
+    padding-left: 80px;
+}
+.history_div h3{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.history_div textarea{
+    resize: none;
+}
+.medical_history{
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 10px;
 }
 .display{
     display: block;
-    color: red;
-    background-color: aqua;
+}
+
+.history_popUP{
+    text-align: center;
+    padding: 100px 0;
+}
+.history_popUP textarea{
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+}
+.history_popUP button{
+    width: 200px;
+    border-radius: 26px;
+    font-size: 16px;
+    padding: 7px;
+    letter-spacing: 1px;
+    background-color: #5252ee;
+    color: white;
+    border: 3px solid #5252ee;
+}
+.history_popUP button:hover{
+    background-color: #6262f2;
+    cursor: pointer;
 }
