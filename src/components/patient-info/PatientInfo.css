@@ -1,13 +1,110 @@
 .container{
     display: flex;
     gap: 100px;
+    height: 100vh;
+}
+
+/* Patient Enrollment Style */
+.enrolled_details{
+    padding: 100px 0;
 }
 .user-image{
     height: 200px;
     width: 200px;
     border-radius: 10px;
 }
+#name{
+    font-weight: 600;
+    font-size: 27px;
+}
+#category{
+    font-size: 19px;
+}
+.enrollment{
+    background-color: #E6E6E6;
+    border-radius: 10px;
+    padding: 29px 10px;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.enrollment label{
+    font-size: 18px;
+    font-weight: 500;
+}
+.enrollment p{
+    font-size: 14px;
+}
+
+/* Patient Info Styles */
 .patient_info{
-    border-left: 2px solid red;
+    border-left: 2px solid black;
+    padding: 76px 0;
     padding-left: 100px;
+}
+.patient_details h3{
+    font-size: 30px;
+    font-weight: 600;
+}
+.patient_details{
+    line-height: 2.5;
+}
+.row label{
+    font-weight: 450;    
+    font-size: 19px;
+}
+.row input{
+    width: 400px;
+    padding: 5px 10px;
+    border-radius: 26px;
+    margin-left: 30px;
+    font-size: 16px;
+    color: grey;
+    border: 1px solid grey;
+    background-color: transparent;
+}
+#FullName{
+    margin-left: 47px;
+}
+#CNIC{
+    margin-left: 95px;
+}
+#dob{
+    margin-left: 100px;
+}
+#email{
+    margin-left: 89px;
+    width: 250px;
+}
+.row select{
+    width: 139px;
+    padding: 5px;
+    border-radius: 26px;
+    margin-left: 10px;
+    color: grey;
+    border: 1px solid grey;
+    background-color: #dedddd;
+}
+
+/* Patient Vitals */
+.vitals{
+    margin-top: 10px;
+    background-color: #E6E6E6;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.vitals label{
+    font-weight: 450;
+}
+
+
+/* Medical History Styles*/
+.medical_history{
+    display: none;
+}
+.display{
+    display: block;
+    color: red;
+    background-color: aqua;
 }

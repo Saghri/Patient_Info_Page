@@ -1,0 +1,167 @@
+/* NavigationBar.css */
+.navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff !important;
+    padding: 0px;
+    width: 1350px;
+  }
+
+  .navbarlist li{
+    display: inline-block !important;
+    
+
+  }
+  
+  .logo{
+    margin-left: -10px;
+  }
+
+  /* .search-bar{
+    margin: 0px 300px;
+    height: 26px;
+    width: 270px;
+    border-radius: 10px;
+  } */
+
+.search_icon{
+  position: relative;
+  top: -14px;
+  left: -264px;
+}
+
+.opd_img{
+  height: 15px;
+  width: 15px;
+}
+
+.report_img{
+  height: 15px;
+  width: 15px;
+}
+
+.lab_img{
+  height: 15px;
+  width: 15px;
+}
+
+  .pagenavigation{
+    margin: 0 35px;
+    position: relative;
+    top: -27px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+  }
+
+ .pagenavigation a{
+  text-decoration: none;
+  color: black;
+ }
+  /* .logo {
+    width: 80px;
+    height: 40px;
+  }
+  
+  .button-group button {
+    margin-left: 10px;
+  } */
+  
+  .dropdown-menu {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -27px;
+  
+  }
+  
+  .dropdown-menu span {
+    margin-right: 5px;
+  }
+  
+  
+   .search-bar {
+    padding: 11px 25px;
+    border: 1px solid #ccc;
+    border-radius: 45px;
+    width: 215px;
+    margin: -20px 200px; 
+    position: relative;
+    top: -27px;
+    padding-right: 30px; /* Add padding on the right to make space for the icon */
+   /* Replace 'path/to/search-icon.png' with the path to your search icon image */
+    background-repeat: no-repeat;
+    background-position: right center; /* Position the icon on the right and vertically centered */
+    background-size: 35px 31px; /* Adjust the size of the icon as needed */
+    
+  } 
+  
+
+
+  /* styles.css */
+
+/* General styles for the navigation bar */
+.navigation-bar {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+/* Rest of your existing styles for logo, search bar, etc. */
+
+/* Styles for the user profile dropdown */
+.user-profile {
+  position: relative;
+  top: -18px;
+  right: 10px;
+}
+
+.user-profile button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.user-profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* Additional styles for the dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  width: 110px;
+  
+}
+
+.user-profile:hover .dropdown-menu {
+  display: block;
+}
+
+/* Styles for individual menu items */
+.dropdown-menu li {
+  padding: 8px;
+  
+}
+
+.dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  
+}
+
+.dropdown-menu li a:hover {
+  background-color: #ddd;
+}
+
+
